@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ExamenMvvm.ViewModels
 {
-    public partial class DescuentoCompra : ObservableObject
+    public partial class DescuentoCompraViewModel : ObservableObject
     {
         [ObservableProperty]
         private double producto1;
@@ -40,38 +40,38 @@ namespace ExamenMvvm.ViewModels
 
             try
             {
-                if (producto1<0 || producto2<0 || producto3<0)
+                if (Producto1<0 || Producto2<0 || Producto3<0)
                 {
                     Alerta("ADVERTENCIA", "Valor de la compra del producto no puede ser negativo");
 
-                }else if (producto1 == 0 || producto2 == 0 || producto3 == 0)
+                }else if (Producto1 == 0 || Producto2 == 0 || Producto3 == 0)
                 {
                     Alerta("ADVERTENCIA", "Valor de la compra del producto no puede ser cero");
 
                 }else
                 {
-                    subtotal = producto1 + producto2 + producto3;
+                    Subtotal = Producto1 + Producto2 + Producto3;
 
-                    if (subtotal <= 999.99)
+                    if (Subtotal <= 999.99)
                     {
-                        descuento = 0;
+                        Descuento = 0;
 
-                    }else if (subtotal >= 1000 & subtotal <= 4999.99)
+                    }else if (Subtotal >= 1000 & Subtotal <= 4999.99)
                     {
-                        descuento = subtotal * 0.10;
+                        Descuento = Subtotal * 0.10;
                     }
-                    else if (subtotal >= 5000 & subtotal <= 9999.99)
+                    else if (Subtotal >= 5000 & Subtotal <= 9999.99)
                     {
-                        descuento = subtotal * 0.20;
+                        Descuento = Subtotal * 0.20;
                     }
-                    else if (subtotal >= 10000)
+                    else if (Subtotal >= 10000)
                     {
-                        descuento = subtotal * 0.30;
+                        Descuento = Subtotal * 0.30;
                     }
+
+                    Totalapagar = Subtotal - Descuento;
 
                 }
-
-
 
             }
             catch (Exception ex)

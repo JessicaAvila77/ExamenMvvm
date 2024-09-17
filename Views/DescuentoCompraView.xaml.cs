@@ -2,12 +2,12 @@ using ExamenMvvm.ViewModels;
 
 namespace ExamenMvvm.Views;
 
-public partial class DescuentoCompra : ContentPage
+public partial class DescuentoCompraView : ContentPage
 {
 	private DescuentoCompraViewModel ViewModel;
 
 
-	public DescuentoCompra()
+	public DescuentoCompraView()
 	{
 		InitializeComponent();
 		ViewModel = new DescuentoCompraViewModel();
