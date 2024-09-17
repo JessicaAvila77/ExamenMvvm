@@ -40,15 +40,17 @@ namespace ExamenMvvm.ViewModels
 
             try
             {
-                if (Producto1<0 || Producto2<0 || Producto3<0)
+                if (Producto1 < 0 || Producto2 < 0 || Producto3 < 0)
                 {
                     Alerta("ADVERTENCIA", "Valor de la compra del producto no puede ser negativo");
 
-                }else if (Producto1 == 0 || Producto2 == 0 || Producto3 == 0)
+                }
+                else if (Producto1 == 0 || Producto2 == 0 || Producto3 == 0)
                 {
                     Alerta("ADVERTENCIA", "Valor de la compra del producto no puede ser cero");
 
-                }else
+                }
+                else
                 {
                     Subtotal = Producto1 + Producto2 + Producto3;
 
@@ -56,11 +58,12 @@ namespace ExamenMvvm.ViewModels
                     {
                         Descuento = 0;
 
-                    }else if (Subtotal >= 1000 & Subtotal <= 4999.99)
+                    }
+                    else if (Subtotal >= 1000 && Subtotal <= 4999.99)
                     {
                         Descuento = Subtotal * 0.10;
                     }
-                    else if (Subtotal >= 5000 & Subtotal <= 9999.99)
+                    else if (Subtotal >= 5000 && Subtotal <= 9999.99)
                     {
                         Descuento = Subtotal * 0.20;
                     }
